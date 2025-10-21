@@ -17,7 +17,7 @@ export default async function Home() {
   const trendingPosts: BlogData[] = posts.slice(0, 6);
 
   return (
-    <div className="mx-auto max-w-[90vw] px-4 pt-[80px]">
+    <div className="mx-auto max-w-[90vw] px-4 pt-24">
       {/* Featured + Trending Row */}
       <section className="mb-10 grid grid-cols-1 md:grid-cols-[60%_40%] gap-6">
         <div className="bg-gradient-to-r from-pink-100 to-yellow-100 rounded-xl shadow p-6">

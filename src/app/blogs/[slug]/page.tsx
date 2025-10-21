@@ -15,11 +15,11 @@ export default async function Page(props: { params: Promise<{ slug: string }> })
   }
 
   return (
-    <main className="pt-24">
-      <article className="mx-auto mb-10 max-w-4xl px-4">
+    <main>
+      <article className="mx-auto mb-10 max-w-6xl px-4">
         {/* Header */}
         <header className="pt-10">
-          <h1 className="text-4xl font-extrabold leading-[1.2] text-slate-900 md:text-5xl md:leading-[1.2]">
+          <h1 className="text-3xl font-extrabold leading-[1.2] text-slate-900 md:text-4xl md:leading-[1.2]">
             {post.title}
           </h1>
           <p className="mt-2 text-sm text-gray-600">
