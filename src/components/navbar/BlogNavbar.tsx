@@ -62,10 +62,9 @@ const Navbar = () => {
             <svg width="20" height="20" fill="none" stroke="#1e90ff" strokeWidth="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           </button>
           <a
-            href=""
+            href="mailto:alpha.instaverse@gmail.com"
             type="button"
-            className="rounded-lg border bg-[#1e90ff] px-4 py-2 text-base font-semibold text-white transition duration-300 ease-in-out hover:bg-blue-600 focus:z-10 focus:outline-hidden focus:ring-4 focus:ring-gray-100 sm:px-5 sm:py-2.5"
-            target="_blank">
+            className="rounded-lg border bg-[#1e90ff] px-4 py-2 text-base font-semibold text-white transition duration-300 ease-in-out hover:bg-blue-600 focus:z-10 focus:outline-hidden focus:ring-4 focus:ring-gray-100 sm:px-5 sm:py-2.5">
             Write for us
           </a>
         </div>
