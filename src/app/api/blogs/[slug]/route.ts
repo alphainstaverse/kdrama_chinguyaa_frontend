@@ -11,12 +11,25 @@ export async function GET(
   const { slug } = await context.params; // ✅ Must await params
 
   try {
-    const response = await fetch(`${BACKEND_URL}/items/post/${slug}`);
+    const url = new URL(`${BACKEND_URL}/items/post`);
+    url.searchParams.append('filter[slug][_eq]', slug);
+    url.searchParams.append('filter[status][_eq]', 'published'); // Ensure only published posts are fetched
+
+    console.log('BACKEND_SERVER:', request.url);
+    console.log('DIRECT_US:', url.toString());
+
+    const response = await fetch(url.toString());
     if (!response.ok) {
-      return NextResponse.json({ error: 'Blog not found' }, { status: 404 });
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
-    const post = data.data;
+    const posts = data.data;
+
+    if (!posts || posts.length === 0) {
+      return NextResponse.json({ error: 'Blog not found' }, { status: 404 });
+    }
+
+    const post = posts[0]; // Get the first matching post
 
     const { title, shortDescription, coverImage, category, bodyContent, publishedDate } = post;
     const res = NextResponse.json({ title, shortDescription, coverImage, category, bodyContent, publishedDate, isDirectusContent: true });

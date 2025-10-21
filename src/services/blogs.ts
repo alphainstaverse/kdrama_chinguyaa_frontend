@@ -24,7 +24,9 @@ export async function getBlogs(page = 1, limit = 10) {
 }
 
 export async function getBlog(slug: string) {
-  const response = await fetch(`${baseUrl}/api/blogs/${slug}`, {
+  const fetchUrl = `${baseUrl}/api/blogs/${slug}`;
+  console.log('Fetching blog from:', fetchUrl); // Add this log
+  const response = await fetch(fetchUrl, {
     cache: 'no-store', // 👈 ensures fresh API call
   });
 
