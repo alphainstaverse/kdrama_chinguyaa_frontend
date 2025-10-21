@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Quicksand } from 'next/font/google'
 import './globals.css'
+import Navbar from '@/components/navbar/BlogNavbar'
+import Footer from '@/components/footer/Footer'
 
 const quicksand = Quicksand({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700'] })
 
@@ -38,7 +40,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={quicksand.className}>{children}</body>
+      <body className={`${quicksand.className} flex flex-col min-h-screen`}>
+        <Navbar />
+        <main className="flex-grow">
+          {children}
+        </main>
+        <Footer />
+      </body>
     </html>
   )
 }

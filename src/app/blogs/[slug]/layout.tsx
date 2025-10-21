@@ -1,5 +1,3 @@
-import Footer from '@/components/footer/Footer'
-import Navbar from '@/components/navbar/BlogNavbar'
 import Newsletter from '@/components/newsletter/Newsletter'
 import { getBlog } from '@/services/blogs'
 import { Metadata } from 'next'
@@ -54,12 +52,8 @@ export async function generateMetadata(props: PageParams): Promise<Metadata | nu
 
 const MdxLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div>
-      <Navbar />
-      <div className="mt-20">
-        {children}
-      </div>
-      <Footer />
+    <div className="mt-20">
+      {children}
     </div>
   )
 }

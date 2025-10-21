@@ -4,8 +4,6 @@ import { useEffect, useState, useCallback } from 'react'
 import { getBlogs } from '@/services/blogs'
 import { BlogData } from '@/dataTypes/BlogData'
 import BlogList from '@/components/blog/BlogList'
-import Navbar from '@/components/navbar/BlogNavbar'
-import Footer from '@/components/footer/Footer'
 import SectionHeading from '@/components/sectionHeading/ColoredSectionHeading'
 
 export default function BlogsPage() {
@@ -65,31 +63,27 @@ export default function BlogsPage() {
   }, [loading, hasMore, loadMorePosts])
 
   return (
-    <>
-      <Navbar />
-      <div className="mx-auto max-w-[90vw] px-4 mt-32">
-        <section className="mb-10 bg-white/80 rounded-xl shadow p-6">
-          <SectionHeading title={['All', 'Blogs']} subtitle="Explore more articles" />
+    <div className="mx-auto max-w-[90vw] px-4 pt-[80px]">
+      <section className="mb-10 bg-white/80 rounded-xl shadow p-6">
+        <SectionHeading title={['All', 'Blogs']} subtitle="Explore more articles" />
 
-          {error && <p className="text-center text-red-500 my-4">{error}</p>}
-          {posts.length === 0 && loading && (
-            <p className="text-center text-gray-500 my-4">Loading blogs...</p>
-          )}
+        {error && <p className="text-center text-red-500 my-4">{error}</p>}
+        {posts.length === 0 && loading && (
+          <p className="text-center text-gray-500 my-4">Loading blogs...</p>
+        )}
 
-          <BlogList posts={posts} type="full" />
+        <BlogList posts={posts} type="full" />
 
-          {loading && posts.length > 0 && (
-            <p className="text-center text-gray-400 mt-6">Loading more...</p>
-          )}
+        {loading && posts.length > 0 && (
+          <p className="text-center text-gray-400 mt-6">Loading more...</p>
+        )}
 
-          {!hasMore && posts.length > 0 && (
-            <p className="text-center text-gray-400 mt-6">
-              You’ve reached the end.
-            </p>
-          )}
-        </section>
-      </div>
-      <Footer />
-    </>
+        {!hasMore && posts.length > 0 && (
+          <p className="text-center text-gray-400 mt-6">
+            You’ve reached the end.
+          </p>
+        )}
+      </section>
+    </div>
   )
 }

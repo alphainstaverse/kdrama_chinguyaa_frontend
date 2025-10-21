@@ -1,55 +1,6 @@
 import { description } from '@/appData'
-import { EarthIcon, FacebookIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import ScrollToTop from '../scrollToTop/ScrollToTop'
-
-const socialLinks = [
-  {
-    name: 'Facebook',
-    link: '',
-    icon: <FacebookIcon />,
-  },
-  {
-    name: 'Website',
-    link: '',
-    icon: <EarthIcon />,
-  },
-]
-
-const institutes = {
-  title: 'Institutes',
-  items: [
-    { label: 'Udemy', href: `` },
-    { label: 'Coursera', href: `` },
-    { label: 'Frontend Masters', href: `` },
-  ],
-}
-
-const quickLinks = {
-  title: 'Quick Links',
-  items: [
-    {
-      label: 'Blogs',
-      href: `/blogs`,
-    },
-  ],
-}
-
-const myWork = {
-  title: 'My Work',
-  items: [
-    { label: 'Codevertiser', href: 'https://www.codevertiser.com/' },
-    {
-      label: 'Quiz App Template',
-      href: 'https://github.com/AbdulBasit313/React-Quiz-App-Template',
-    },
-    {
-      label: 'JS Bytes Newsletter',
-      href: 'https://codevertiser.substack.com/',
-    },
-  ],
-}
 
 const Footer = () => {
   return (
@@ -68,15 +19,14 @@ const Footer = () => {
           <h6 className="mb-4 text-lg font-semibold text-[#eee]">Quick Links</h6>
           <ul className="space-y-2">
             <li><Link href="/blogs" className="hover:text-[#1e90ff]">Blogs</Link></li>
-            <li><Link href="/categories" className="hover:text-[#1e90ff]">Categories</Link></li>
-            <li><a href="" target="_blank" className="hover:text-[#1e90ff]">Write for us</a></li>
           </ul>
         </div>
         {/* Column 3: Contact + Copyright */}
         <div>
           <h6 className="mb-4 text-lg font-semibold text-[#eee]">Contact & Copyright</h6>
           <ul className="space-y-2">
-            <li><a href="mailto:info@kdramachinguyaa.com" className="hover:text-[#1e90ff]">info@kdramachinguyaa.com</a></li>
+            <li><a href="mailto:alpha.instaverse@gmail.com" className="hover:text-[#1e90ff]">alpha.instaverse@gmail.com</a></li>
+            <li><a href="https://www.instagram.com/kdrama_chinguya" target="_blank" className="hover:text-[#1e90ff]">Instagram: kdrama_chinguyaa</a></li>
           </ul>
           <p className="mt-6 text-sm text-[#eee]">Kdrama Chinguyaa © 2025. All rights reserved.</p>
         </div>
