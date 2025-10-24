@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next' // 1. Import Viewport
 import { Quicksand } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/navbar/BlogNavbar'
@@ -19,8 +19,11 @@ export const metadata: Metadata = {
   title,
   description,
   category: 'education',
+  
+  // --- 2. The viewport line is REMOVED from here ---
+
   alternates: {
-  canonical: url,
+    canonical: url,
   },
   metadataBase: new URL(baseUrl), // Use baseUrl here
   openGraph: {
@@ -32,6 +35,14 @@ export const metadata: Metadata = {
   },
   // Removed twitter metadata
 }
+
+// --- 3. ADD this new export for the viewport settings ---
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+}
+// ----------------------------------------------------
 
 export default function RootLayout({
   children,

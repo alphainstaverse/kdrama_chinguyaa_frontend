@@ -4,8 +4,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-
-// --- 1. Import new icons ---
 import { HiOutlineMail } from 'react-icons/hi'
 import { AiOutlineInstagram } from 'react-icons/ai'
 
@@ -72,17 +70,18 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* --- 2. SLIDE-OUT PANEL --- */}
+      {/* 2. SLIDE-OUT PANEL */}
       <div className={`
           md:hidden fixed top-0 left-0 h-screen w-3/4 max-w-xs bg-white shadow-lg 
           transition-transform duration-300 ease-in-out 
           z-[1010] 
           ${showNav ? 'translate-x-0' : '-translate-x-full'}
-          
-          /* --- 2. Make panel a flex column --- */
           flex flex-col
+          
+          /* --- 1. ADDED PADDING FOR SAFE AREA --- */
+          pb-[env(safe-area-inset-bottom)]
       `}>
-        {/* Header *inside* the panel (won't shrink) */}
+        {/* Panel Header */}
         <div className="flex-shrink-0 flex items-center justify-between p-4 h-[80px] border-b border-gray-200" style={{ padding: '0 24px' }}>
           <button onClick={handleShowNav} aria-label="Close menu">
             <XIcon color="#202020" strokeWidth={3} size={25} />
@@ -94,8 +93,9 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Links inside the panel (will grow to fill space) */}
-        <div className="flex-grow flex flex-col p-4 space-y-2">
+        {/* Panel Links */}
+        {/* --- 2. ADDED OVERFLOW-Y-AUTO --- */}
+        <div className="flex-grow flex flex-col p-4 space-y-2 overflow-y-auto">
           {navLinks.map(({ title, link }, index) => (
             <Link
               key={index}
@@ -108,9 +108,9 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* --- 3. Add new Footer section (won't shrink) --- */}
+        {/* Panel Footer */}
         <div className="flex-shrink-0 p-4 border-t border-gray-200">
-          <h6 className="mb-3 text-xs font-semibold text-gray-400 uppercase">Contact</h6>
+          <h6 className="mb-3 text-xs font-semibold text-gray-400 uppercase">Contact & Copyright</h6>
           <ul className="space-y-3">
             <li>
               <a 
@@ -132,6 +132,9 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
+          <p className="mt-4 text-xs text-gray-500">
+            Kdrama Chinguyaa © 2025. All rights reserved.
+          </p>
         </div>
       </div>
 
