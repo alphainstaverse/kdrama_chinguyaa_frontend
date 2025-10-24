@@ -15,35 +15,39 @@ const TrendingBlogList: React.FC<TrendingBlogListProps> = ({ posts }) => {
     <div>
       {posts.map((post) => (
         
-        // REVERTED: List item spacing tight for mobile, larger for desktop
-        <div key={post.slug} className="mb-2 pb-2 md:mb-4 md:pb-4 border-b border-gray-200 last:border-b-0 last:mb-0 last:pb-0 flex items-center gap-4">
+        // --- MODIFICATION START ---
+        // Removed border-b classes and mb/pb.
+        // Added a new wrapper div with card styling (bg-white, shadow, rounded, padding, and margin-bottom).
+        <div key={post.slug} className="bg-white rounded-lg shadow p-2 mb-3 last:mb-0">
+          <div className="flex items-center gap-4">
           
-          {post.coverImage && (
-            // REVERTED: Image size is W-24 (large) on mobile, W-20 (small) on desktop
-            <div className="relative w-24 h-24 md:w-20 md:h-20 flex-shrink-0">
-              <Image
-                src={`${BACKEND_URL}/assets/${post.coverImage}`}
-                alt={post.title}
-                fill 
-                className="object-cover rounded-lg"
-              />
-            </div>
-          )}
+            {post.coverImage && (
+              <div className="relative w-24 h-24 md:w-20 md:h-20 flex-shrink-0">
+                <Image
+                  src={`${BACKEND_URL}/assets/${post.coverImage}`}
+                  alt={post.title}
+                  fill 
+                  className="object-cover rounded-lg"
+                />
+              </div>
+            )}
 
-          {/* REVERTED: Removed w-2/3 to let text flow naturally */}
-          <div>
-            <Link href={`/blogs/${post.slug}`}>
-              <h4 className="text-base font-bold hover:text-primary leading-tight mb-1">
-                {post.title}
-              </h4>
-            </Link>
-            <div className="text-right">
-              <span className="text-xs text-gray-500 uppercase">
-                {post.category}
-              </span>
+            <div>
+              <Link href={`/blogs/${post.slug}`}>
+                <h4 className="text-base font-bold hover:text-primary leading-tight mb-1">
+                  {post.title}
+                </h4>
+              </Link>
+              <div className="text-right">
+                <span className="text-xs text-gray-500 uppercase">
+                  {post.category}
+                </span>
+              </div>
             </div>
           </div>
         </div>
+        // --- MODIFICATION END ---
+
       ))}
     </div>
   )
