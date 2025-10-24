@@ -10,14 +10,6 @@ const Footer = () => {
   return (
     <footer className="bg-[#111] text-[#eee] py-10">
       <div className="mx-auto max-w-[1280px] px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-        {/* Column 1: About / Site Info */}
-        <div>
-          <Link href="/" className="mb-6 flex items-center gap-4 text-[#eee]">
-            <Image src="/images/kdrama_chinguyaa.png" alt="Kdrama Chinguyaa Logo" width={40} height={40} />
-            <span className="text-2xl font-bold tracking-wide">Kdrama Chinguyaa</span>
-          </Link>
-          <p className="mt-2 text-[#eee] max-w-[320px]">{description}</p>
-        </div>
         {/* Column 2: Quick Links */}
         <div>
           <h6 className="mb-4 text-lg font-semibold text-[#eee]">Quick Links</h6>
@@ -50,7 +42,7 @@ const Footer = () => {
               </a>
             </li>
           </ul>
-          <p className="mt-6 text-sm text-[#eee]">Kdrama Chinguyaa © 2025. All rights reserved.</p>
+          <p className="mt-6 text-sm text-[#eee]">Kdrama Chinguyaa ©2023-2025. All rights reserved.</p>
         </div>
       </div>
     </footer>
