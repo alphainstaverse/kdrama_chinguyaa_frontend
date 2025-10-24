@@ -26,7 +26,7 @@ const Footer = () => {
           <h6 className="mb-4 text-lg font-semibold text-[#eee]">Contact & Copyright</h6>
           <ul className="space-y-2">
             <li><a href="mailto:alpha.instaverse@gmail.com" className="hover:text-[#1e90ff]">alpha.instaverse@gmail.com</a></li>
-            <li><a href="https://www.instagram.com/kdrama_chinguya" target="_blank" className="hover:text-[#1e90ff]">Instagram: kdrama_chinguyaa</a></li>
+            <li><a href="https://www.instagram.com/kdrama_chinguyaa" target="_blank" className="hover:text-[#1e90ff]">Instagram: kdrama_chinguyaa</a></li>
           </ul>
           <p className="mt-6 text-sm text-[#eee]">Kdrama Chinguyaa © 2025. All rights reserved.</p>
         </div>
