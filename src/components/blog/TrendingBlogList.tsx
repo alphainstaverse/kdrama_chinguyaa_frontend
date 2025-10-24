@@ -1,3 +1,5 @@
+// src/components/blog/TrendingBlogList.tsx
+
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -15,12 +17,14 @@ const TrendingBlogList: React.FC<TrendingBlogListProps> = ({ posts }) => {
     <div>
       {posts.map((post) => (
         
-        // --- MODIFICATION START ---
-        // Removed border-b classes and mb/pb.
-        // Added a new wrapper div with card styling (bg-white, shadow, rounded, padding, and margin-bottom).
-        <div key={post.slug} className="bg-white rounded-lg shadow p-2 mb-3 last:mb-0">
+        <Link 
+          key={post.slug} 
+          href={`/blogs/${post.slug}`}
+          // --- ADDED hover:scale-105 HERE ---
+          className="block bg-white rounded-lg shadow p-2 mb-3 last:mb-0 group transform transition-transform duration-100 ease-in-out hover:scale-105 active:scale-[.98]"
+        >
           <div className="flex items-center gap-4">
-          
+            
             {post.coverImage && (
               <div className="relative w-24 h-24 md:w-20 md:h-20 flex-shrink-0">
                 <Image
@@ -33,11 +37,9 @@ const TrendingBlogList: React.FC<TrendingBlogListProps> = ({ posts }) => {
             )}
 
             <div>
-              <Link href={`/blogs/${post.slug}`}>
-                <h4 className="text-base font-bold hover:text-primary leading-tight mb-1">
-                  {post.title}
-                </h4>
-              </Link>
+              <h4 className="text-base font-bold group-hover:text-primary leading-tight mb-1">
+                {post.title}
+              </h4>
               <div className="text-right">
                 <span className="text-xs text-gray-500 uppercase">
                   {post.category}
@@ -45,8 +47,7 @@ const TrendingBlogList: React.FC<TrendingBlogListProps> = ({ posts }) => {
               </div>
             </div>
           </div>
-        </div>
-        // --- MODIFICATION END ---
+        </Link>
 
       ))}
     </div>
