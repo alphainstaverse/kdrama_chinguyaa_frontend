@@ -1,31 +1,28 @@
-import type { Metadata, Viewport } from 'next' // 1. Import Viewport
+import type { Metadata, Viewport } from 'next'
 import { Quicksand } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/navbar/BlogNavbar'
 import Footer from '@/components/footer/Footer'
 
+// 1. Import NextTopLoader
+import NextTopLoader from 'nextjs-toploader';
+
 const quicksand = Quicksand({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700'] })
 
 const title = ''
-
-const description =
-  ''
-
+const description = ''
 const baseUrl = process.env.DEPLOYMENT_ENVIRONMENT === 'LOCAL' ? 'http://localhost:3000' : `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
-const url = baseUrl; // Use the defined baseUrl
+const url = baseUrl; 
 
 export const metadata: Metadata = {
   applicationName: 'Learn Now',
   title,
   description,
   category: 'education',
-  
-  // --- 2. The viewport line is REMOVED from here ---
-
   alternates: {
     canonical: url,
   },
-  metadataBase: new URL(baseUrl), // Use baseUrl here
+  metadataBase: new URL(baseUrl),
   openGraph: {
     title,
     description,
@@ -33,16 +30,13 @@ export const metadata: Metadata = {
     siteName: 'Learn Now',
     type: 'website',
   },
-  // Removed twitter metadata
 }
 
-// --- 3. ADD this new export for the viewport settings ---
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',
 }
-// ----------------------------------------------------
 
 export default function RootLayout({
   children,
@@ -52,6 +46,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${quicksand.className} flex flex-col min-h-screen`}>
+        
+        {/* 2. Add the component here */}
+        <NextTopLoader
+          color="#1e90ff" // You can change this to any color
+          initialPosition={0.08}
+          crawlSpeed={200}
+          height={3}
+          crawl={true}
+          showSpinner={false} // Hides the little spinner
+          easing="ease"
+          speed={200}
+        />
+        
         <Navbar />
         <main className="flex-grow">
           {children}
