@@ -3,12 +3,10 @@ import { Quicksand } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/navbar/BlogNavbar'
 import Footer from '@/components/footer/Footer'
-
-// 1. Import NextTopLoader
 import NextTopLoader from 'nextjs-toploader';
 
-// NEW: Import your new component
-import VisitorLogger from '@/components/analytics/VisitorLogger';
+// 1. Import the Google Analytics component
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const quicksand = Quicksand({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700'] })
 
@@ -41,6 +39,9 @@ export const viewport: Viewport = {
   viewportFit: 'cover',
 }
 
+// 2. Get your Measurement ID from the environment variable
+const gaId = "G-RKD223GDZS"
+
 export default function RootLayout({
                                      children,
                                    }: Readonly<{
@@ -50,26 +51,26 @@ export default function RootLayout({
     <html lang="en">
     <body className={`${quicksand.className} flex flex-col min-h-screen`}>
 
-    {/* 2. Add the component here */}
     <NextTopLoader
-      color="#1e90ff" // You can change this to any color
+      color="#1e90ff"
       initialPosition={0.08}
       crawlSpeed={200}
       height={3}
       crawl={true}
-      showSpinner={false} // Hides the little spinner
+      showSpinner={false}
       easing="ease"
       speed={200}
     />
-
-    {/* NEW: Add your invisible logger component */}
-    <VisitorLogger />
 
     <Navbar />
     <main className="flex-grow">
       {children}
     </main>
     <Footer />
+
+    {/* 3. Add the GoogleAnalytics component here */}
+    {/* This component handles everything, including page-by-page tracking */}
+    <GoogleAnalytics gaId={gaId} />
     </body>
     </html>
   )
