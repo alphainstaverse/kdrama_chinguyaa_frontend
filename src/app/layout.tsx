@@ -7,12 +7,15 @@ import Footer from '@/components/footer/Footer'
 // 1. Import NextTopLoader
 import NextTopLoader from 'nextjs-toploader';
 
+// NEW: Import your new component
+import VisitorLogger from '@/components/analytics/VisitorLogger';
+
 const quicksand = Quicksand({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700'] })
 
 const title = ''
 const description = ''
 const baseUrl = process.env.DEPLOYMENT_ENVIRONMENT === 'LOCAL' ? 'http://localhost:3000' : `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
-const url = baseUrl; 
+const url = baseUrl;
 
 export const metadata: Metadata = {
   applicationName: 'Learn Now',
@@ -39,32 +42,35 @@ export const viewport: Viewport = {
 }
 
 export default function RootLayout({
-  children,
-}: Readonly<{
+                                     children,
+                                   }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
     <html lang="en">
-      <body className={`${quicksand.className} flex flex-col min-h-screen`}>
-        
-        {/* 2. Add the component here */}
-        <NextTopLoader
-          color="#1e90ff" // You can change this to any color
-          initialPosition={0.08}
-          crawlSpeed={200}
-          height={3}
-          crawl={true}
-          showSpinner={false} // Hides the little spinner
-          easing="ease"
-          speed={200}
-        />
-        
-        <Navbar />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
-      </body>
+    <body className={`${quicksand.className} flex flex-col min-h-screen`}>
+
+    {/* 2. Add the component here */}
+    <NextTopLoader
+      color="#1e90ff" // You can change this to any color
+      initialPosition={0.08}
+      crawlSpeed={200}
+      height={3}
+      crawl={true}
+      showSpinner={false} // Hides the little spinner
+      easing="ease"
+      speed={200}
+    />
+
+    {/* NEW: Add your invisible logger component */}
+    <VisitorLogger />
+
+    <Navbar />
+    <main className="flex-grow">
+      {children}
+    </main>
+    <Footer />
+    </body>
     </html>
   )
 }
