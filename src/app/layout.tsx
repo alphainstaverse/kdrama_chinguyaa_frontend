@@ -10,7 +10,7 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 
 const quicksand = Quicksand({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700'] })
 
-const title = 'KDrama Chinguyaa';
+const title = 'Kdrama Chinguyaa';
 const description = 'Get the latest trending news, casting updates, reviews, and hot topics from the world of Korean dramas. Your daily K-Drama companion.';
 const baseUrl = process.env.DEPLOYMENT_ENVIRONMENT === 'LOCAL'
   ? 'http://localhost:3000'
