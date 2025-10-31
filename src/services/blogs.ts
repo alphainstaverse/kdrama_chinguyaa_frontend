@@ -23,6 +23,24 @@ export async function getBlogs(page = 1, limit = 10) {
   return blogs;
 }
 
+export async function getFeaturedPost() {
+  // Call the API, ask for 1 post, and set featured=true
+  const fetchUrl = `${baseUrl}/api/blogs?featuredPost=true`;
+
+  const response = await fetch(fetchUrl, {
+    cache: 'no-store',
+  });
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
+  const posts = await response.json();
+
+  // Return the first item, or undefined if the array is empty
+  return posts && posts.length > 0 ? posts[0] : undefined;
+}
+
 export async function getBlog(slug: string) {
   const fetchUrl = `${baseUrl}/api/blogs/${slug}`;
   console.log('Fetching blog from:', fetchUrl); // Add this log

@@ -5,15 +5,15 @@ import BlogCard from '@/components/blog/MinimalCard'
 import CategoryList from '@/components/category/CategoryList'
 import Faq from '@/components/faq/Faq'
 import Newsletter from '@/components/newsletter/Newsletter'
-import { getBlogs } from '@/services/blogs' 
+import { getBlogs, getFeaturedPost } from '@/services/blogs'
 import FeaturedBlogCard from '@/components/blog/FeaturedBlogCard'
 import TrendingBlogList from '@/components/blog/TrendingBlogList'
 import { BlogData } from '@/dataTypes/BlogData'
 import { HiStar, HiOutlineLightningBolt, HiOutlineDocumentText } from 'react-icons/hi' 
 
 export default async function Home() {
-  const posts: BlogData[] = await getBlogs(); 
-  const featuredPost: BlogData = posts[0];
+  const posts: BlogData[] = await getBlogs();
+  const featuredPost: BlogData | undefined = await getFeaturedPost();
   const trendingPosts: BlogData[] = posts.slice(0, 6);
 
   return (
