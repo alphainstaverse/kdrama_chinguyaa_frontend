@@ -26,10 +26,11 @@ const HorizontalBlogCard: FC<BlogCardProps> = ({ post }) => {
       className="flex flex-col gap-3 rounded-lg border p-3 lg:flex-row group transition-transform active:scale-[.98]"
     >
       {coverImage && (
-        <figure className="relative mt-1 h-24 min-w-40 overflow-hidden bg-gray-200">
+        // FIX 1: Updated sizes for mobile (h-48) and large screens (lg:h-40 lg:w-64)
+        <figure className="relative mt-1 w-full h-48 lg:h-40 lg:w-64 lg:min-w-64 overflow-hidden bg-gray-200">
           <Image
-            className="rounded-md object-cover transition-transform duration-300 group-hover:scale-125"
-            // 2. Use BACKEND_URL here
+            // FIX 2: Added object-top to fix the cropping
+            className="rounded-md object-cover object-top transition-transform duration-300 group-hover:scale-125"
             src={`${BACKEND_URL}/assets/${coverImage}`}
             alt={title}
             fill={true}
