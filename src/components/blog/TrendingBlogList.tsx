@@ -7,7 +7,7 @@ import { BACKEND_URL } from '@/utils/constants'
 
 import { BlogPost } from '@/models/BlogPost'
 import { formatDate } from '../../utils/date'
-import { getTagClasses } from '@/utils/styles' // <-- 1. IMPORT THE HELPER
+import { getTagClasses } from '@/utils/styles'
 
 interface TrendingBlogListProps {
   posts: BlogPost[]
@@ -26,12 +26,15 @@ const TrendingBlogList: React.FC<TrendingBlogListProps> = ({ posts }) => {
           <div className="flex items-center gap-4">
 
             {post.coverImage && (
-              <div className="relative w-24 h-24 md:w-20 md-h-20 flex-shrink-0">
+              // FIX 1: Increased size (and fixed typo md-h-20)
+              // You can adjust w-28/h-28 and md:w-24/md:h-24 as needed
+              <div className="relative w-28 h-28 md:w-24 md:h-24 flex-shrink-0">
                 <Image
                   src={`${BACKEND_URL}/assets/${post.coverImage}`}
                   alt={post.title}
                   fill
-                  className="object-cover rounded-lg"
+                  // FIX 2: Added 'object-top'
+                  className="object-cover object-top rounded-lg"
                 />
               </div>
             )}
@@ -42,7 +45,6 @@ const TrendingBlogList: React.FC<TrendingBlogListProps> = ({ posts }) => {
               </h4>
               <div className="text-right">
 
-                {/* --- 2. USE THE FUNCTION HERE --- */}
                 <span className={getTagClasses(post.category)}>
                   {post.category}
                 </span>
