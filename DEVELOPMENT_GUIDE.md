@@ -107,7 +107,7 @@ To modify the layout to include a large square post and move the "Popular Articl
     import { categories, description, faqs, title } from '@/appData'
     import Banner from '@/components/banner/SimpleBanner'
     import BlogList from '@/components/blog/BlogList'
-    import BlogCard from '@/components/blog/MinimalCard'
+    
     import CategoryList from '@/components/category/CategoryList'
     import Faq from '@/components/faq/Faq'
     import Footer from '@/components/footer/Footer'

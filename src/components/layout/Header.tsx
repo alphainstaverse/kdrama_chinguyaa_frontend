@@ -12,7 +12,7 @@ const navLinks = [
   { title: 'Blogs', link: '/blogs' },
 ]
 
-const Navbar = () => {
+const Header = () => {
   const [showNav, setShowNav] = useState(false)
   const pathname = usePathname()
 
@@ -35,7 +35,7 @@ const Navbar = () => {
   return (
     <>
       {/* 1. MAIN HEADER BAR (No change) */}
-      <nav className="fixed top-0 left-0 w-full h-[80px] z-[1000] bg-white border-b border-gray-200 shadow-sm flex items-center" style={{ padding: '0 24px' }}>
+      <nav className="fixed top-0 left-0 w-full h-[60px] md:h-[80px] z-[1000] bg-white border-b border-gray-200 shadow-sm flex items-center" style={{ padding: '0 24px' }}>
         <div className="mx-auto w-full max-w-[1280px] flex items-center relative">
           <button
             onClick={handleShowNav}
@@ -151,4 +151,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Header

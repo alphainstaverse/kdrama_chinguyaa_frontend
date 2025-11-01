@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Quicksand } from 'next/font/google'
 import './globals.css'
-import Navbar from '@/components/layout/Navbar'
+import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import NextTopLoader from 'nextjs-toploader';
 
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   },
   description,
   icons: {
-    icon: '/icon.png',
-    shortcut: '/favicon.ico',
-    apple: '/apple-icon.png',
+    icon: '/icons/icon.png',
+    shortcut: '/icons/favicon.ico',
+    apple: '/icons/apple-icon.png',
   },
   category: 'entertainment',
   keywords: ['K-Drama', 'Korean Drama', 'K-Drama News', 'Trending', 'Reviews', 'Casting'],
@@ -65,7 +65,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    <body className={`${quicksand.className} flex flex-col min-h-screen`}>
+    <body className={`${quicksand.className} flex flex-col min-h-screen sm:text-base text-sm`}>
 
     <NextTopLoader
       color="#1e90ff"
@@ -78,7 +78,7 @@ export default function RootLayout({
       speed={200}
     />
 
-    <Navbar />
+    <Header />
     <main className="flex-grow">
       {children}
     </main>

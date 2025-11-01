@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import DirectusContentRenderer from "@/components/html-render/DirectusContentRenderer";
+import DirectusContentRenderer from "@/components/common/html-render/DirectusContentRenderer";
 import { getBlog } from "@/services/blogs";
 import { BACKEND_URL } from '@/utils/constants';
 

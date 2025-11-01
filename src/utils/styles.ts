@@ -1,4 +1,4 @@
-// src/utils/styleHelpers.ts
+// src/utils/styles.ts
 
 export const getTagClasses = (category: string): string => {
 

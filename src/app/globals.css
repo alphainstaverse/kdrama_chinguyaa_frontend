@@ -4,48 +4,19 @@
     .hero-section {
         grid-template-columns: 1fr 1fr !important;
     }
-    .main-feed {
-        grid-template-columns: 1fr !important;
-    }
-    .sidebar {
-        display: none !important;
-    }
-    .footer {
-        grid-template-columns: 1fr 1fr 1fr !important;
-    }
+
+
 }
 
 @media (max-width: 768px) {
-    nav {
-        height: 60px !important;
-    }
-    .nav-menu {
-        display: none !important;
-    }
-    .main-feed {
-        grid-template-columns: 1fr !important;
-    }
-    .article-card {
-        flex-direction: column !important;
-    }
-    .sidebar {
-        width: 100% !important;
-        position: static !important;
-        display: block !important;
-        margin-top: 24px !important;
-    }
-    .footer {
-        grid-template-columns: 1fr !important;
-    }
+
+
+
 }
 
 @media (max-width: 480px) {
-    body {
-        font-size: 0.9em !important;
-    }
-    img, .article-card img {
-        max-width: 100% !important;
-    }
+
+
 }
 
 /*

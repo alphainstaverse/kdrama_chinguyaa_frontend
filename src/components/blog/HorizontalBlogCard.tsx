@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
-import { formatDate } from '../../utils'
+import { formatDate } from '../../utils/date'
 import { BlogPost } from '@/models/BlogPost'
 import { BACKEND_URL } from '@/utils/constants' // 1. Import BACKEND_URL
 

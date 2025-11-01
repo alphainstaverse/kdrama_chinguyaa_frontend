@@ -31,9 +31,8 @@ export async function GET(
 
     const post = posts[0]; // Get the first matching post
 
-    const { title, shortDescription, coverImage, category, bodyContent, publishedDate } = post;
-    const res = NextResponse.json({ title, shortDescription, coverImage, category, bodyContent, publishedDate, isDirectusContent: true });
-    return res;
+    post.isDirectusContent = true;
+    return NextResponse.json(post);
   } catch (error: any) {
     console.error('Error in GET /api/blogs/[slug]:', error);
     return NextResponse.json({ error: error.message }, { status: 500 });

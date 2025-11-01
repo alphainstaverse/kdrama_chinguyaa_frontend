@@ -7,7 +7,7 @@ import { AiOutlineInstagram } from 'react-icons/ai'
 const Footer = () => {
   return (
     <footer className="bg-[#111] text-[#eee] py-10">
-      <div className="mx-auto max-w-[1280px] px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+      <div className="mx-auto max-w-[1280px] px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
         {/* Column 2: Quick Links */}
         <div>
           <h6 className="mb-4 text-lg font-semibold text-[#eee]">Quick Links</h6>
