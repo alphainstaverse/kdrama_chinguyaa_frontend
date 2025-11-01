@@ -4,7 +4,6 @@ import { useEffect, useState, useCallback } from 'react'
 import { getBlogs } from '@/services/blogs'
 import { BlogPost } from '@/models/BlogPost'
 import BlogList from '@/components/blog/BlogList'
-import SectionHeading from '@/components/sectionHeading/ColoredSectionHeading'
 
 export default function BlogsPage() {
   const [posts, setPosts] = useState<BlogPost[]>([])
@@ -65,8 +64,12 @@ export default function BlogsPage() {
   return (
     <div className="mx-auto max-w-[90vw] px-4 pt-[80px]">
       <section className="mb-10 bg-white/80 rounded-xl shadow p-6">
-        <SectionHeading title={['All', 'Blogs']} subtitle="Explore more articles" />
-
+        <div className="my-7">
+          <h2 className="text-2xl font-bold text-primary">
+            All <span className="text-theme"> Blogs </span>
+          </h2>
+          <p className="text-secondary">Explore more articles</p>
+        </div>
         {error && <p className="text-center text-red-500 my-4">{error}</p>}
         {posts.length === 0 && loading && (
           <p className="text-center text-gray-500 my-4">Loading blogs...</p>
