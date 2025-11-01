@@ -51,7 +51,7 @@ const Navbar = () => {
               md:order-1 flex items-center gap-2 cursor-pointer 
               z-10 order-2
           ">
-            <Link href="/" onClick={() => setShowNav(false)} className="inline-flex items-center">
+            <Link href="/public" onClick={() => setShowNav(false)} className="inline-flex items-center">
               <Image src="/images/kdrama_chinguyaa.png" alt="Kdrama Chinguyaa Logo" width={300} height={40} />
             </Link>
           </div>

@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from 'next'
 import { Quicksand } from 'next/font/google'
 import './globals.css'
-import Navbar from '@/components/navbar/BlogNavbar'
-import Footer from '@/components/footer/Footer'
+import Navbar from '@/components/layout/Navbar'
+import Footer from '@/components/layout/Footer'
 import NextTopLoader from 'nextjs-toploader';
 
 // 1. Import the Google Analytics component

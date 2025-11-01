@@ -1,4 +1,3 @@
-import Newsletter from '@/components/newsletter/Newsletter'
 import { getBlog } from '@/services/blogs'
 import { Metadata } from 'next'
 import { BACKEND_URL } from '@/utils/constants'
