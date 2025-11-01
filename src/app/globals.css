@@ -187,3 +187,48 @@ body {
   border-top: 1px solid #ccc;
   margin: 2rem 0;
 }
+
+/* --- Simple Blockquote with Blue Accents --- */
+blockquote {
+    margin: 1.5em 0; /* Space above/below */
+    padding: 1em 1em 1em 3.5em; /* Top, Right, Bottom, Left padding */
+    position: relative; /* Required for positioning the icon and border */
+
+    /* --- Colors from your inspiration image --- */
+    border-left: 5px solid #6daee8; /* The solid blue left border */
+
+    /* You can optionally add a very light background */
+    /* background-color: #f9fcff; */
+}
+
+/* The quote icon */
+blockquote::before {
+    content: "“"; /* The quote mark */
+    font-family: Arial, sans-serif;
+
+    /* --- Color from your inspiration image --- */
+    color: #a7d0f9; /* Light blue for the quote mark */
+
+    font-size: 4em; /* Large size */
+    line-height: 1;
+    position: absolute;
+    top: 0.1em;
+    left: 0.15em; /* Position it within the left padding */
+    z-index: 1; /* Place it behind the text */
+}
+
+/* This makes sure your text (paragraphs, etc.) sits on top */
+blockquote > * {
+    position: relative;
+    z-index: 2;
+    color: #333; /* Good text color for readability */
+}
+
+/* Add spacing between paragraphs inside the quote */
+blockquote p {
+    margin-bottom: 0.5em;
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}

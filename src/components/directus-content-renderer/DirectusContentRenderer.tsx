@@ -7,7 +7,7 @@ interface DirectusContentRendererProps {
 }
 
 const DirectusContentRenderer: React.FC<DirectusContentRendererProps> = ({ htmlContent }) => {
-  // console.log("htmlContent:", htmlContent);
+  console.log("htmlContent:", htmlContent);
   return (
     <div
       className="max-w-none text-base text-foreground [&_a]:text-blue-600 [&_a]:underline hover:[&_a]:text-blue-700"
