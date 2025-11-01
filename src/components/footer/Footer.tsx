@@ -1,5 +1,3 @@
-import { description } from '@/appData'
-import Image from 'next/image'
 import Link from 'next/link'
 // 1. Import the mail icon from 'hi'
 import { HiOutlineMail } from 'react-icons/hi'

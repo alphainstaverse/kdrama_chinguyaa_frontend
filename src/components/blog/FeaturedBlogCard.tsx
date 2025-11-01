@@ -3,11 +3,11 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { BACKEND_URL } from '@/constants'
-import { BlogData } from '@/dataTypes/BlogData'
+import { BACKEND_URL } from '@/utils/constants'
+import { BlogPost } from '@/models/BlogPost'
 
 interface FeaturedBlogCardProps {
-  post: BlogData
+  post: BlogPost
 }
 
 const FeaturedBlogCard: React.FC<FeaturedBlogCardProps> = ({ post }) => {

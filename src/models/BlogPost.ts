@@ -1,4 +1,4 @@
-export class BlogData {
+export class BlogPost {
   title: string;
   shortDescription: string;
   publishedDate: string;

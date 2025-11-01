@@ -2,12 +2,12 @@
 
 import { useEffect, useState, useCallback } from 'react'
 import { getBlogs } from '@/services/blogs'
-import { BlogData } from '@/dataTypes/BlogData'
+import { BlogPost } from '@/models/BlogPost'
 import BlogList from '@/components/blog/BlogList'
 import SectionHeading from '@/components/sectionHeading/ColoredSectionHeading'
 
 export default function BlogsPage() {
-  const [posts, setPosts] = useState<BlogData[]>([])
+  const [posts, setPosts] = useState<BlogPost[]>([])
   const [page, setPage] = useState(1)
   const [loading, setLoading] = useState(false)
   const [hasMore, setHasMore] = useState(true)
@@ -19,14 +19,14 @@ export default function BlogsPage() {
     setError(null)
 
     try {
-      const newPosts: BlogData[] = await getBlogs(page, 6)
+      const newPosts: BlogPost[] = await getBlogs(page, 6)
 
       if (newPosts.length === 0) {
         setHasMore(false)
       } else {
-        setPosts((prev: BlogData[]) => {
-          const unique: BlogData[] = newPosts.filter(
-            (np: BlogData) => !prev.some((pp: BlogData) => pp.slug === np.slug)
+        setPosts((prev: BlogPost[]) => {
+          const unique: BlogPost[] = newPosts.filter(
+            (np: BlogPost) => !prev.some((pp: BlogPost) => pp.slug === np.slug)
           )
           return [...prev, ...unique]
         })

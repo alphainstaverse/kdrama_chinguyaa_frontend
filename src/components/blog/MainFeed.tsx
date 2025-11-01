@@ -1,9 +1,9 @@
 import ArticleCard from './ArticleCard';
 
-import { BlogData } from '@/dataTypes/BlogData';
+import { BlogPost } from '@/models/BlogPost';
 
 interface MainFeedProps {
-  posts: BlogData[];
+  posts: BlogPost[];
 }
 
 const MainFeed: React.FC<MainFeedProps> = ({ posts }) => (

@@ -3,14 +3,14 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { BACKEND_URL } from '@/constants'
+import { BACKEND_URL } from '@/utils/constants'
 
-import { BlogData } from '@/dataTypes/BlogData'
+import { BlogPost } from '@/models/BlogPost'
 import { formatDate } from '../../utils'
 import { getTagClasses } from '@/utils/styleHelpers' // <-- 1. IMPORT THE HELPER
 
 interface TrendingBlogListProps {
-  posts: BlogData[]
+  posts: BlogPost[]
 }
 
 const TrendingBlogList: React.FC<TrendingBlogListProps> = ({ posts }) => {

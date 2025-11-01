@@ -1,6 +1,6 @@
 import { getBlogs } from '@/services/blogs' // Revert to using getBlogs
 import { MetadataRoute } from 'next'
-import { BlogData } from '@/dataTypes/BlogData' // Import BlogData
+import { BlogPost } from '@/models/BlogPost' // Import BlogData
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const appBaseUrl = process.env.DEPLOYMENT_ENVIRONMENT === 'LOCAL' ? 'http://localhost:3000' : `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
@@ -24,7 +24,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     },
     // blog page
-    ...(blogs.map((blog: BlogData) => ({ // Explicitly type blog as BlogData
+    ...(blogs.map((blog: BlogPost) => ({ // Explicitly type blog as BlogData
       url: `${appBaseUrl}/blogs/${blog.slug}`,
       lastModified: new Date(),
       changeFrequency: 'always',

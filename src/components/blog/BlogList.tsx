@@ -1,10 +1,10 @@
 import { FC } from 'react'
 import VerticalBlogCard from './VerticalBlogCard'
 import HorizontalBlogCard from './HorizontalBlogCard'
-import { BlogData } from '@/dataTypes/BlogData'
+import { BlogPost } from '@/models/BlogPost'
 
 interface BlogListProps {
-  posts: BlogData[]
+  posts: BlogPost[]
   type?: 'vertical' | 'horizontal' | 'full'
 }
 

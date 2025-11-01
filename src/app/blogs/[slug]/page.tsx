@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import DirectusContentRenderer from "@/components/directus-content-renderer/DirectusContentRenderer";
+import DirectusContentRenderer from "@/components/html-render/DirectusContentRenderer";
 import { getBlog } from "@/services/blogs";
-import { BACKEND_URL } from '@/constants';
+import { BACKEND_URL } from '@/utils/constants';
 
 export default async function Page(props: { params: Promise<{ slug: string }> }) {
   const params = await props.params;

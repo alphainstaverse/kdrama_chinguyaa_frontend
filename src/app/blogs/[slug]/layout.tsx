@@ -1,8 +1,8 @@
 import Newsletter from '@/components/newsletter/Newsletter'
 import { getBlog } from '@/services/blogs'
 import { Metadata } from 'next'
-import { BACKEND_URL } from '@/constants'
-import { BlogData } from '@/dataTypes/BlogData'
+import { BACKEND_URL } from '@/utils/constants'
+import { BlogPost } from '@/models/BlogPost'
 
 interface PageParams {
   params: Promise<{
@@ -12,7 +12,7 @@ interface PageParams {
 
 export async function generateMetadata(props: PageParams): Promise<Metadata | null> {
   const params = await props.params;
-  const post: BlogData | undefined = await getBlog(params.slug)
+  const post: BlogPost | undefined = await getBlog(params.slug)
 
   if (!post) return null
 

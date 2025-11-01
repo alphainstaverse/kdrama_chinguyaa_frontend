@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { BACKEND_URL } from '@/constants';
+import { BACKEND_URL } from '@/utils/constants';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 30;

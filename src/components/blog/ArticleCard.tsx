@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { BACKEND_URL } from '@/constants';
+import { BACKEND_URL } from '@/utils/constants';
 
-import { BlogData } from '@/dataTypes/BlogData';
+import { BlogPost } from '@/models/BlogPost';
 
 interface ArticleCardProps {
-  post: BlogData;
+  post: BlogPost;
 }
 
 const ArticleCard: React.FC<ArticleCardProps> = ({ post }) => (

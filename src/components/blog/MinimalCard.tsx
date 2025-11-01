@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { BACKEND_URL } from '@/constants'
+import { BACKEND_URL } from '@/utils/constants'
 import { FC } from 'react'
 import { formatDate } from '../../utils'
-import { BlogData } from '@/dataTypes/BlogData'
+import { BlogPost } from '@/models/BlogPost'
 
 interface BlogCardProps {
-  post: BlogData
+  post: BlogPost
 }
 
 const BlogCard: FC<BlogCardProps> = ({ post }) => {

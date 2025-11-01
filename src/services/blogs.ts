@@ -1,4 +1,4 @@
-import { BlogData } from '@/dataTypes/BlogData';
+import { BlogPost } from '@/models/BlogPost';
 
 const getBaseUrl = () => {
   if (typeof window !== 'undefined') {
@@ -53,5 +53,5 @@ export async function getBlog(slug: string) {
   }
 
   const blog = await response.json();
-  return blog ? new BlogData(blog) : undefined;
+  return blog ? new BlogPost(blog) : undefined;
 }
