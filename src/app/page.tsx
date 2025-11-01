@@ -63,7 +63,7 @@ export default async function Home() {
           Dive into our complete K-drama library.
         </p>
 
-        <BlogList posts={posts} />
+        <BlogList posts={posts} type="vertical" />
       </section>
     </div>
   );

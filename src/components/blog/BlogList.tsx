@@ -8,7 +8,7 @@ interface BlogListProps {
   type?: 'vertical' | 'horizontal' | 'full'
 }
 
-const BlogList: FC<BlogListProps> = ({ posts, type = 'vertical' }) => {
+const BlogList: FC<BlogListProps> = ({ posts, type = 'full' }) => {
   if (type === 'full') {
     return (
       <div className="grid gap-6 grid-cols-1">

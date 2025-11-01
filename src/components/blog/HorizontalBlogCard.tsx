@@ -25,12 +25,12 @@ const HorizontalBlogCard: FC<BlogCardProps> = ({ post }) => {
       key={slug} 
       className="flex flex-col gap-3 rounded-lg border p-3 lg:flex-row group transition-transform active:scale-[.98]"
     >
+
       {coverImage && (
-        // FIX 1: Updated sizes for mobile (h-48) and large screens (lg:h-40 lg:w-64)
         <figure className="relative mt-1 w-full h-48 lg:h-40 lg:w-64 lg:min-w-64 overflow-hidden bg-gray-200">
           <Image
-            // FIX 2: Added object-top to fix the cropping
-            className="rounded-md object-cover object-top transition-transform duration-300 group-hover:scale-125"
+            // FIX: Changed 'object-top' to 'object-[50%_20%]'
+            className="rounded-md object-cover object-[50%_20%] transition-transform duration-300 group-hover:scale-125"
             src={`${BACKEND_URL}/assets/${coverImage}`}
             alt={title}
             fill={true}
@@ -38,6 +38,7 @@ const HorizontalBlogCard: FC<BlogCardProps> = ({ post }) => {
           />
         </figure>
       )}
+
 
       <div>
         <h3 className="mb-2 text-xl font-bold text-primary transition-colors duration-200 group-hover:text-theme">
