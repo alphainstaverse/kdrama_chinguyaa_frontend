@@ -7,7 +7,7 @@ import { BlogPost } from '@/models/BlogPost'
 import { HiStar, HiOutlineLightningBolt, HiOutlineDocumentText } from 'react-icons/hi' 
 
 export default async function Home() {
-  const posts: BlogPost[] = await getBlogs();
+  const posts: BlogPost[] = await getBlogs(1, 9);
   const featuredPost: BlogPost | undefined = await getFeaturedPost();
   const trendingPosts: BlogPost[] = posts.slice(0, 6);
 
