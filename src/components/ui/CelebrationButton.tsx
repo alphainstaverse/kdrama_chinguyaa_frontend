@@ -48,7 +48,7 @@ export default function CelebrationButton() {
         onClick={startCelebration}
         className="text-xs md:text-sm px-4 py-2 bg-gradient-to-r from-pink-500 to-violet-500 text-white font-bold rounded-md shadow-md hover:opacity-90 transition-all hover:scale-105"
       >
-        🎉 1 Month Anniversary - Celebrate
+        🎉 Celebrating 1 Month Anniversary - Click Here
       </button>
 
       {showFireworks && (
