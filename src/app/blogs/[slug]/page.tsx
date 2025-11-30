@@ -34,21 +34,21 @@ export default async function Page(props: { params: Promise<{ slug: string }> })
           </p>
         </header>
 
-        {/* --- COVER IMAGE MODIFICATION --- */}
-        {/* Applied max-w-4xl and mx-auto to the section holding the image */}
-        {post.coverImage && (
-          <section className="my-5 max-w-4xl mx-auto"> 
-            <figure className="relative h-[250px] w-full md:h-[320px] lg:h-[400px] xl:h-[450px]">
-              <Image
-                src={`${BACKEND_URL}/assets/${post.coverImage}`}
-                alt={post.title}
-                fill
-                sizes="100%"
-                className="rounded-md object-cover" 
-              />
-            </figure>
-          </section>
-        )}
+{/* --- COVER IMAGE MODIFICATION (FIXED and LEFT-ALIGNED) --- */}
+        {/* Applied max-w-4xl and mx-auto to the section holding the image */}
+        {post.coverImage && (
+          <section className="my-5 max-w-4xl mx-auto"> 
+            <figure className="relative h-[250px] w-full md:h-[320px] lg:h-[400px] xl:h-[450px]">
+              <Image
+                src={`${BACKEND_URL}/assets/${post.coverImage}`}
+                alt={post.title}
+                fill
+                sizes="100%"
+                className="rounded-md object-contain object-left" 
+              />
+            </figure>
+          </section>
+        )}
 
         {/* BLOG CONTENT: No change, it's already max-w-4xl mx-auto */}
         <section className="my-10 max-w-4xl mx-auto prose lg:prose-lg">

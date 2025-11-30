@@ -16,9 +16,9 @@ export default async function Home() {
     <div className="mx-auto max-w-[90vw] px-2 md:px-4 pt-24">
       
       {/* This component now intelligently waits for the full page load */}
-      <div className="flex justify-end mb-6">
+      {/* <div className="flex justify-end mb-6">
         <CelebrationButton />
-      </div>
+      </div> */}
 
       <section className="mb-10 grid grid-cols-1 md:grid-cols-[60%_40%] gap-2 md:gap-6">
         
